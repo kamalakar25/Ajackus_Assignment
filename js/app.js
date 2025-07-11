@@ -1,7 +1,4 @@
-/**
- * Employee Directory Application
- * Enhanced Vanilla JavaScript implementation with animations and responsive design
- */
+
 
 class EmployeeDirectory {
     constructor() {
@@ -421,6 +418,12 @@ class EmployeeDirectory {
         const title = document.getElementById('modal-title');
         const form = document.getElementById('employee-form');
         
+        // Ensure modal exists
+        if (!modal) {
+            console.error('Modal element not found');
+            return;
+        }
+        
         title.textContent = employee ? 'Edit Employee' : 'Add New Employee';
         
         if (employee) {
@@ -430,6 +433,8 @@ class EmployeeDirectory {
             this.clearFormErrors();
         }
         
+        // Show modal with proper display and animation
+        modal.style.display = 'flex';
         modal.classList.add('modal--visible');
         document.body.style.overflow = 'hidden';
         
@@ -442,10 +447,17 @@ class EmployeeDirectory {
 
     hideModal() {
         const modal = document.getElementById('employee-modal');
+        if (!modal) return;
+        
         modal.classList.remove('modal--visible');
-        document.body.style.overflow = 'auto';
-        this.editingEmployee = null;
-        this.clearFormErrors();
+        
+        // Wait for animation to complete before hiding
+        setTimeout(() => {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+            this.editingEmployee = null;
+            this.clearFormErrors();
+        }, 300);
     }
 
     populateForm(employee) {
