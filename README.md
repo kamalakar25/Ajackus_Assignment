@@ -30,35 +30,32 @@ A modern, responsive employee directory built with HTML, CSS, vanilla JavaScript
 ## 📁 Project Structure
 
 ```
-employee-directory/
-├── src/main/resources/
-│   ├── templates/
-│   │   └── dashboard.ftlh          # Main Freemarker template
-│   └── static/
-│       ├── css/
-│       │   └── style.css           # Main stylesheet
-│       └── js/
-│           ├── data.js             # Mock employee data
-│           └── app.js              # Main application logic
+Ajackus_Assignment/
+└── dashboard.html         # Main Freemarker template
+└── index.html 
+├── css/
+│   └── style.css           # Main stylesheet
+└── js/
+│   ├── data.js             # Mock employee data
+│   └── app.js              # Main application logic
 └── README.md                       # This file
 ```
 
 ## 🔧 Setup and Installation
 
 ### Prerequisites
-- Java 8+ (for Freemarker processing)
 - A web server capable of processing Freemarker templates
 
 ### Option 1: With Freemarker Server
 1. Clone the repository
 2. Set up a Java application server (Spring Boot, Servlet container, etc.)
-3. Configure Freemarker to process `.ftlh` files
+3. Configure Freemarker to process `.html` files
 4. Place the mock data in your server-side context as `mockEmployees`
 5. Start the server and navigate to the dashboard
 
 ### Option 2: Static Development (for testing)
 1. Clone the repository
-2. Convert `dashboard.ftlh` to `index.html`
+2. Convert `dashboard.html` to `index.html`
 3. Remove Freemarker directives and replace with static HTML
 4. Open `index.html` in a web browser
 
